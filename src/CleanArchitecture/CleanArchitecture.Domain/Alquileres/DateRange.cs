@@ -12,7 +12,7 @@ public sealed record DateRange
   public int CantidadDias => Fin.DayNumber - Inicio.DayNumber;
   public static DateRange Create(DateOnly inicio, DateOnly fin)
   {
-    if(inicio > fin)
+    if (inicio > fin)
     {
       throw new ApplicationException("La fecha final es anterior a la fecha de inicio");
     }
@@ -21,6 +21,6 @@ public sealed record DateRange
     {
       Inicio = inicio,
       Fin = fin
-    }
+    };
   }
 }

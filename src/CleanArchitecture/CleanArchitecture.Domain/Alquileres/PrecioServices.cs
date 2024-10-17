@@ -1,3 +1,4 @@
+using CleanArchitecture.Domain.Shared;
 using CleanArchitecture.Domain.Vehiculos;
 
 namespace CleanArchitecture.Domain.Alquileres;
@@ -8,12 +9,12 @@ public class PrecioService
   {
     var tipoMoneda = vehiculo.Precio!.TipoMoneda;
     var precioPorPeriodo = new Moneda(
-      periodo.CantidadDias*vehiculo.Precio.Monto, 
+      periodo.CantidadDias * vehiculo.Precio.Monto,
       tipoMoneda);
 
     decimal porcentageChange = 0;
 
-    foreach(var accesorio in vehiculo.Accesorios)
+    foreach (var accesorio in vehiculo.Accesorios)
     {
       porcentageChange += accesorio switch
       {
@@ -26,7 +27,7 @@ public class PrecioService
 
     var accesorioCharges = Moneda.Zero(tipoMoneda);
 
-    if(porcentageChange > 0 )
+    if (porcentageChange > 0)
     {
       accesorioCharges = new Moneda(
         precioPorPeriodo.Monto * porcentageChange,
@@ -37,7 +38,7 @@ public class PrecioService
     var precioTotal = Moneda.Zero();
     precioTotal += precioPorPeriodo;
 
-    if(!vehiculo.Mantenimiento!.IsZero())
+    if (!vehiculo.Mantenimiento!.IsZero())
     {
       precioTotal += vehiculo.Mantenimiento;
     }
@@ -45,10 +46,10 @@ public class PrecioService
     precioTotal += accesorioCharges;
 
     return new PrecioDetalle(
-      precioPorPeriodo, 
+      precioPorPeriodo,
       vehiculo.Mantenimiento,
       accesorioCharges,
       precioTotal
-      )
+    );
   }
 }
