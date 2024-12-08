@@ -70,7 +70,7 @@ public sealed class Alquiler : Entity
       duracion,
       fechaCreacion
     );
-
+    
     alquiler.RaiseDomainEvent(new AlquilerReservadoDomainEvent(alquiler.Id!));
 
     vehiculo.FechaUltimoAlquiler = fechaCreacion;
