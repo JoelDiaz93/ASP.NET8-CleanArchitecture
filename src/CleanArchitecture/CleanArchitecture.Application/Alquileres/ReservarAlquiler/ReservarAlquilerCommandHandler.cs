@@ -38,13 +38,13 @@ internal sealed class ReservarAlquilerCommandHandler : ICommandHandler<ReservarA
       ReservarAlquilerCommand request,
       CancellationToken cancellationToken)
     {
-        var user = await _userRepository.GetByIdAsync(request.userId, cancellationToken);
+        var user = await _userRepository.GetByIdAsync(request.UserId, cancellationToken);
 
         if(user is null){
           return Result.Failure<Guid>(UserErrors.Notfound);
         }
 
-        var vehiculo = await _vehiculoRepository.GetByIdAsync(request.vehiculoId, cancellationToken);
+        var vehiculo = await _vehiculoRepository.GetByIdAsync(request.VehiculoId, cancellationToken);
 
         if(vehiculo is null)
         {
