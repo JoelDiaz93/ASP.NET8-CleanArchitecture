@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanArchitecture.Domain", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanArchitecture.Application", "src\CleanArchitecture\CleanArchitecture.Application\CleanArchitecture.Application.csproj", "{B31E755D-7598-4937-8384-41014CDAFFD9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanArchitecture.Infrastructure", "src\CleanArchitecture\CleanArchitecture.Infrastructure\CleanArchitecture.Infrastructure.csproj", "{26A82459-97C5-46E9-B33F-1D973B991060}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanArchitecture.Api", "src\CleanArchitecture\CleanArchitecture.Api\CleanArchitecture.Api.csproj", "{C019C13F-A726-425F-9E45-DE2DF7D51BF2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -28,10 +32,20 @@ Global
 		{B31E755D-7598-4937-8384-41014CDAFFD9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B31E755D-7598-4937-8384-41014CDAFFD9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B31E755D-7598-4937-8384-41014CDAFFD9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26A82459-97C5-46E9-B33F-1D973B991060}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26A82459-97C5-46E9-B33F-1D973B991060}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26A82459-97C5-46E9-B33F-1D973B991060}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26A82459-97C5-46E9-B33F-1D973B991060}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C019C13F-A726-425F-9E45-DE2DF7D51BF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C019C13F-A726-425F-9E45-DE2DF7D51BF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C019C13F-A726-425F-9E45-DE2DF7D51BF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C019C13F-A726-425F-9E45-DE2DF7D51BF2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{E0A28CEE-BB1B-4427-9C41-07CF5C5449B3} = {E63EDCD2-A75B-45CA-AFDD-18AA9AAC3B62}
 		{B54B2230-7C87-4CF8-8B4C-43F4825C8A47} = {E0A28CEE-BB1B-4427-9C41-07CF5C5449B3}
 		{B31E755D-7598-4937-8384-41014CDAFFD9} = {E0A28CEE-BB1B-4427-9C41-07CF5C5449B3}
+		{26A82459-97C5-46E9-B33F-1D973B991060} = {E0A28CEE-BB1B-4427-9C41-07CF5C5449B3}
+		{C019C13F-A726-425F-9E45-DE2DF7D51BF2} = {E0A28CEE-BB1B-4427-9C41-07CF5C5449B3}
 	EndGlobalSection
 EndGlobal
