@@ -6,6 +6,10 @@ namespace CleanArchitecture.Domain.Reviews;
 
 public sealed class Review : Entity
 {
+  private Review()
+  {
+
+  }
   private Review(
     Guid id,
     Guid vehiculoId,
@@ -24,7 +28,7 @@ public sealed class Review : Entity
     FechaCreacion = fechaCreacion;
   }
   public Guid VehiculoId { get; private set; }
-  public Guid AlquilerId { get; private set;}
+  public Guid AlquilerId { get; private set; }
   public Guid UserId { get; private set; }
   public Rating Rating { get; private set; }
   public Comentario Comentario { get; private set; }
@@ -36,7 +40,7 @@ public sealed class Review : Entity
     DateTime fechaCreacion
   )
   {
-    if(alquiler.Status != AlquilerStatus.Completado)
+    if (alquiler.Status != AlquilerStatus.Completado)
     {
       return Result.Failure<Review>(ReviewErrors.NotEligible);
     }

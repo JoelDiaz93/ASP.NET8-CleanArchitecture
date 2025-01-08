@@ -34,6 +34,14 @@ internal sealed class VehiculoConfiguration : IEntityTypeConfiguration<Vehiculo>
       .HasConversion(tipoMoneda => tipoMoneda.Codigo, codigo => TipoMoneda.FromCodigo(codigo!));
     });
 
+    builder.Property(vehiculo => vehiculo.Color)
+     .HasMaxLength(100)
+     .HasConversion(color => color!.Value, value => new Color(value));
+
+     builder.Property(vehiculo => vehiculo.Marca)
+     .HasMaxLength(200)
+     .HasConversion(marca => marca!.Value, value => new Marca(value));
+
     //Controlamos por una version la disponibilidad de reserva por fecha
     builder.Property<uint>("Version").IsRowVersion();
   }

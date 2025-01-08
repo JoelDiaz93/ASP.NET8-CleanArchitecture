@@ -6,6 +6,10 @@ namespace CleanArchitecture.Domain.Users;
 
 public sealed class User : Entity
 {
+  private User()
+  {
+    
+  }
   private User(
     Guid id,
     Nombre nombre,

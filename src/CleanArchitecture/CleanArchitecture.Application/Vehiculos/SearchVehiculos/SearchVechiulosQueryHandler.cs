@@ -35,8 +35,10 @@ internal sealed class SearchVechiulosQueryHandler : IQueryHandler<SearchVechiulo
     const string sql = """
       SELECT
         a.id as Id,
+        a.marca as Marca,
         a.modelo as Modelo,
         a.vin as Vin,
+        a.color as Color,
         a.precio_monto as PrecioMonto,
         a.precio_tipo_moneda as TipoMoneda,
         a.direccion_pais as Pais,
@@ -51,9 +53,9 @@ internal sealed class SearchVechiulosQueryHandler : IQueryHandler<SearchVechiulo
         SELECT 1
         FROM alquileres AS b
         WHERE 
-          b.vehiculo_id = a.id
+          b.vehiculo_id = a.id AND
           b.duracion_inicio <= @EndDate AND
-          b.duracion_final  >= @StartDate AND
+          b.duracion_fin >= @StartDate AND
           b.status = ANY(@ActiveAlquilerStatuses)
       )
     """;
